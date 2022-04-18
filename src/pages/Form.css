@@ -1,0 +1,27 @@
+.form {
+  max-width: 400px;
+  align-self: center;
+}
+
+.form .below-form {
+  padding: 40px 0px;
+  text-align: center;
+}
+
+.form ion-button {
+  margin: 16px 16px 0 16px;
+}
+
+.form a {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form a.create {
+  font-size: 18px;
+}
+
+.form a:last-child {
+  color: #aaa;
+  text-decoration: none;
+}
