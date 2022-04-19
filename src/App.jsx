@@ -8,23 +8,8 @@ import Tabs from "./components/Tabs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-const App = () => {
-  // const [Films, setFilms] = useState([])
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://movies-app1.p.rapidapi.com/api/movies',
-  //   headers: {
-  //     'X-RapidAPI-Host': 'movies-app1.p.rapidapi.com',
-  //     'X-RapidAPI-Key': 'a975f03f51msh25d01219d203eb3p1717b4jsn5f80aa07df6b'
-  //   }
-  // };
 
-  // axios.request(options).then(function (response) {
-  //   console.log(response.data.results);
-  //   setFilms(response.data.results)
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
+const App = () => {
 
   return (
     <AppContextProvider>

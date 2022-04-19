@@ -4,8 +4,6 @@ import { img } from '../util';
 import urls from '../urls';
 import './Home.css';
 import { Link } from 'react-router-dom';
-import { movies } from '../mockData';
-import axios from 'axios';
 import {
   IonPage,
   IonContent,
@@ -18,7 +16,6 @@ import {
   IonCol
 } from '@ionic/react';
 
-//c692243122msh75f877da5593d8ap10d61ajsnfcd3a392e0b7
 const Home = (props) => {
   const movieChange = useCallback(async track => {
     await props.setFilm(track)
@@ -32,9 +29,11 @@ const Home = (props) => {
           <IonListHeader>
             <ion-label>New Movies</ion-label>
           </IonListHeader>
+          {props.movieList === [] ? <div>wait pleas</div> :
+          
           <IonGrid>
             <IonRow>
-              {movies.tracks.map(track => (
+                {props.movieList.map(track => (
                 <IonCol
                   size={3}
                   className="new-track"
@@ -43,9 +42,9 @@ const Home = (props) => {
                   <Link to={urls.APP_CHAT}>
                     <IonItem lines="none" onClick={() => movieChange(track)} >
                       <IonLabel>
-                        <img src={img(track.img)} />
+                        <img src={track.image} />
                         <h3>{track.title}</h3>
-                        <p>{track.artist}</p>
+                        <p>{track.year}</p>
                       </IonLabel>
                     </IonItem>
                   </Link>
@@ -53,6 +52,7 @@ const Home = (props) => {
               ))}
             </IonRow>
           </IonGrid>
+            }
         </IonList>
       </IonContent>
     </IonPage>

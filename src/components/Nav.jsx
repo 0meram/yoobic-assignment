@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { menu } from 'ionicons/icons';
 import urls from '../urls';
+import { useHistory } from 'react-router-dom';
 import {
     IonHeader, IonTitle, IonToolbar,
     IonList, IonItem, IonLabel,
@@ -9,6 +10,12 @@ import {
 
 const Nav = () => {
     const [showUserMenuEvent, setShowUserMenuEvent] = useState(null);
+    const history = useHistory();
+
+    const routeChange = () => {
+        let path = urls.LOGIN;
+        history.push(path);
+    }
 
     return (
         <>
@@ -20,7 +27,6 @@ const Nav = () => {
                         </IonButton>
                     </IonButtons>
                     <IonTitle>Yoobic Movies</IonTitle>
-                    <IonTitle>think about the added value</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonPopover
@@ -34,8 +40,8 @@ const Nav = () => {
                     <IonItem href={urls.APP_HOME}>
                         <IonLabel>Home</IonLabel>
                     </IonItem>
-                    <IonItem href={urls.LOGIN}>
-                        <IonLabel>Log out alert and color</IonLabel>
+                    <IonItem onClick={() => { if (window.confirm('Are you sure you wish to logout?')) { routeChange() } }} href="">
+                        <IonLabel color="warning">Log out</IonLabel>
                     </IonItem>
                 </IonList>
             </IonPopover>
