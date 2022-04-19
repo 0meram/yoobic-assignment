@@ -42,6 +42,7 @@ const Login = ({ track, history }) => {
     <IonHeader>
       <IonToolbar>
         <IonTitle>Login</IonTitle>
+        <IonTitle>Add validation</IonTitle>
       </IonToolbar>
     </IonHeader>
     <IonContent className="form">

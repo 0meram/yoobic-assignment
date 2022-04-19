@@ -1,10 +1,11 @@
-import React, { useCallback, useContext } from 'react';
-import { AppContext, getTracks } from '../State';
+import React, { useCallback, useState } from 'react';
 import Nav from '../components/Nav';
 import { img } from '../util';
 import urls from '../urls';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { movies } from '../mockData';
+import axios from 'axios';
 import {
   IonPage,
   IonContent,
@@ -17,10 +18,8 @@ import {
   IonCol
 } from '@ionic/react';
 
+//c692243122msh75f877da5593d8ap10d61ajsnfcd3a392e0b7
 const Home = (props) => {
-  const { state, dispatch } = useContext(AppContext);
-  const movies = getTracks(state);
-
   const movieChange = useCallback(async track => {
     await props.setFilm(track)
   });
@@ -35,7 +34,7 @@ const Home = (props) => {
           </IonListHeader>
           <IonGrid>
             <IonRow>
-              {movies.map(track => (
+              {movies.tracks.map(track => (
                 <IonCol
                   size={3}
                   className="new-track"

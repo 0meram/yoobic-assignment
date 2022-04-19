@@ -20,6 +20,7 @@ const Nav = () => {
                         </IonButton>
                     </IonButtons>
                     <IonTitle>Yoobic Movies</IonTitle>
+                    <IonTitle>think about the added value</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonPopover
@@ -34,7 +35,7 @@ const Nav = () => {
                         <IonLabel>Home</IonLabel>
                     </IonItem>
                     <IonItem href={urls.LOGIN}>
-                        <IonLabel>Log out</IonLabel>
+                        <IonLabel>Log out alert and color</IonLabel>
                     </IonItem>
                 </IonList>
             </IonPopover>
