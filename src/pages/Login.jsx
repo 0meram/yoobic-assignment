@@ -47,11 +47,11 @@ const Login = ({ track, history }) => {
     <IonContent className="form">
       <IonLoading isOpen={showLoading} message="Logging in..." onDidDismiss={() => setShowLoading(false)}/>
       <form onSubmit={handleSubmit} method="post" ref={formRef} action="">
-        <IonList>
-          <IonItem>
-            <IonLabel position={'fixed'}>Email</IonLabel>
-            <IonInput type="email" value={email} onInput={e => setEmail(e.currentTarget.value)} />
-          </IonItem>
+          <IonList>
+            <IonItem>
+              <IonLabel position={'fixed'}>User name</IonLabel>
+              <IonInput name="name" type="text" value={name} onInput={e => setName(e.currentTarget.value)} />
+            </IonItem>
           <IonItem>
             <IonLabel position={'fixed'}>Password</IonLabel>
             <IonInput

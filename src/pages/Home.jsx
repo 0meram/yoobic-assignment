@@ -30,7 +30,6 @@ const Home = (props) => {
             <ion-label>New Movies</ion-label>
           </IonListHeader>
           {props.movieList === [] ? <div>wait pleas</div> :
-          
           <IonGrid>
             <IonRow>
                 {props.movieList.map(track => (

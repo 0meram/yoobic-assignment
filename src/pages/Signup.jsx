@@ -59,12 +59,8 @@ const Signup = ({ track, history }) => {
       <form onSubmit={handleSubmit} method="post" ref={formRef} action="">
         <IonList>
           <IonItem>
-            <IonLabel position={'fixed'}>Name</IonLabel>
+              <IonLabel position={'fixed'}>User name</IonLabel>
             <IonInput name="name" type="text" value={name} onInput={e => setName(e.currentTarget.value)} />
-          </IonItem>
-          <IonItem>
-            <IonLabel position={'fixed'}>Username</IonLabel>
-            <IonInput name="username" type="text" value={username} onInput={e => setUsername(e.currentTarget.value)} />
           </IonItem>
           <IonItem>
             <IonLabel position={'fixed'}>Email</IonLabel>

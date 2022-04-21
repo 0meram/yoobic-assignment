@@ -19,8 +19,8 @@ const Nav = () => {
 
     return (
         <>
-            <IonHeader>
-                <IonToolbar>
+            <IonHeader >
+                <IonToolbar color="dark">
                     <IonButtons slot="start">
                         <IonButton fill="clear" onClick={e => { e.persist(); setShowUserMenuEvent(e) }}>
                             <IonIcon icon={menu} />
@@ -33,12 +33,18 @@ const Nav = () => {
                 event={showUserMenuEvent}
                 isOpen={!!showUserMenuEvent}
                 onDidDismiss={() => setShowUserMenuEvent(null)}>
-                <IonList>
-                    <IonItem href={urls.APP_CHAT}>
-                        <IonLabel>Chat</IonLabel>
-                    </IonItem>
+                <IonList >
                     <IonItem href={urls.APP_HOME}>
                         <IonLabel>Home</IonLabel>
+                    </IonItem>
+                    <IonItem href={urls.APP_CHAT}>
+                        <IonLabel>Details</IonLabel>
+                    </IonItem>
+                    <IonItem href={urls.APP_HOME}>
+                        <IonLabel>Profile</IonLabel>
+                    </IonItem>
+                    <IonItem href={urls.APP_HOME}>
+                        <IonLabel>Chat</IonLabel>
                     </IonItem>
                     <IonItem onClick={() => { if (window.confirm('Are you sure you wish to logout?')) { routeChange() } }} href="">
                         <IonLabel color="warning">Log out</IonLabel>
