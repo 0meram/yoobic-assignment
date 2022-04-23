@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import Home from '../pages/Home';
-import Chat from '../pages/Chat';
+import Card from '../pages/Card';
 import { home, apps } from 'ionicons/icons';
 import urls from '../urls';
 import axios from "axios";
@@ -38,17 +38,12 @@ const Tabs = () => {
   useEffect(() => {
     getMovieList();
   }, [])
-  // axios.request(options).then(function (response) {
-  //   console.log(response.data);
-  // }).catch(function (error) {
-  //   console.error(error);
-  // });
 
   return (
     <IonTabs>
       <IonRouterOutlet>
         <Route path="/app/home" render={() => <Home film={film} setFilm={setFilm} movieList={movieList} />} exact={true} />
-        <Route path="/app/chat" render={() => <Chat film={film} setFilm={setFilm} movieList={movieList} />} exact={true} />
+        <Route path="/app/chat" render={() => <Card film={film} setFilm={setFilm} movieList={movieList} />} exact={true} />
         <Route path="/app/" render={() => <Redirect to={urls.APP_HOME} />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
@@ -58,7 +53,7 @@ const Tabs = () => {
         </IonTabButton>
         <IonTabButton tab="chat" href={urls.APP_CHAT}>
           <IonIcon icon={apps} />
-          <IonLabel>Chat option</IonLabel>
+          <IonLabel>Card Info</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>

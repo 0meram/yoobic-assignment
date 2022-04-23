@@ -5,7 +5,7 @@ import urls from '../urls';
 import { useHistory } from 'react-router-dom';
 import { arrowBackOutline } from 'ionicons/icons';
 
-const Chat = (props) => {
+const Card = (props) => {
   const history = useHistory();
 
   const routeChange = () => {
@@ -32,4 +32,4 @@ const Chat = (props) => {
   );
 };
 
-export default Chat;
+export default Card;
